@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+// Import the firebase_app_check plugin
+import 'package:firebase_app_check/firebase_app_check.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 

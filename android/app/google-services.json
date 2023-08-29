@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "251512652506",
+    "firebase_url": "https://notes-65d4e-default-rtdb.firebaseio.com",
+    "project_id": "notes-65d4e",
+    "storage_bucket": "notes-65d4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251512652506:android:b0b094b163bffa8d0b5be3",
+        "android_client_info": {
+          "package_name": "com.example.firenote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251512652506-hl19mpna5f4g4dm19gg6cir26k0leiqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiZio7-t5clF89FVqCgRMMPYbdri9wQ48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251512652506-hl19mpna5f4g4dm19gg6cir26k0leiqh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "251512652506-2nle2oon927j93h20pmtlc3u7a7mq6s1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firenote.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251512652506:android:0343eb197f34b1a00b5be3",
+        "android_client_info": {
+          "package_name": "com.example.firenotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251512652506-hl19mpna5f4g4dm19gg6cir26k0leiqh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiZio7-t5clF89FVqCgRMMPYbdri9wQ48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251512652506-hl19mpna5f4g4dm19gg6cir26k0leiqh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "251512652506-2nle2oon927j93h20pmtlc3u7a7mq6s1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firenote.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
