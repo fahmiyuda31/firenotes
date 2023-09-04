@@ -40,13 +40,44 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           }
           if (snapshot.hasData) {
+            // return GridView(
+            //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            //       crossAxisCount: 2),
+            //   children: snapshot.data!.docs
+            //       .map((note) => noteCard(doc: note))
+            //       .toList(),
+            // );
+
             return GridView(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2),
-              children: snapshot.data!.docs
-                  .map((note) => noteCard(() {}, data: note))
-                  .toList(),
-            );
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                children: snapshot.data!.docs.map((document) {
+                  Map<String, dynamic> data =
+                      // ignore: unnecessary_cast
+                      document.data() as Map<String, dynamic>;
+                  return InkWell(
+                    onTap: () {},
+                    child: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      margin: const EdgeInsets.all(8.0),
+                      decoration: BoxDecoration(
+                          color: AppStyle.accentColor,
+                          borderRadius: BorderRadius.circular(8.0)),
+                      child: Text(data['note_title'],
+                          style: const TextStyle(
+                            color: Colors.white,
+                          )),
+                    ),
+
+                    // title: Text(
+                    //   data['note_title'],
+                    //   style: const TextStyle(
+                    //       color: Colors.white,
+                    //       fontWeight: FontWeight.bold,
+                    //       fontSize: 17),
+                    // ),
+                  );
+                }).toList());
 
             // return ListView(
             //     children: snapshot.data!.docs.map((DocumentSnapshot document) {

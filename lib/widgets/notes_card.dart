@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firenote/style/app_style.dart';
 import 'package:flutter/material.dart';
 
-Widget noteCard(Null Function() param0,
-    {Function()? onTap, QueryDocumentSnapshot? data}) {
-  return GestureDetector(
+Widget noteCard({Function()? onTap, QueryDocumentSnapshot? doc}) {
+  print(doc);
+  return InkWell(
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(8.0),
@@ -17,7 +17,7 @@ Widget noteCard(Null Function() param0,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'TESTING',
+              "NOtes",
               style: TextStyle(color: Colors.white),
             )
           ],
