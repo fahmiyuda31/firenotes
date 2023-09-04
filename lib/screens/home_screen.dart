@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         backgroundColor: AppStyle.mainColor,
       ),
-      body: Center(
+      body: SafeArea(
           child: FutureBuilder(
         future: FirebaseFirestore.instance
             .collection('Notes') // 👈 Your collection name here
@@ -51,48 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
             return GridView(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
-                children: snapshot.data!.docs.map((document) {
-                  Map<String, dynamic> data =
-                      // ignore: unnecessary_cast
-                      document.data() as Map<String, dynamic>;
-                  return InkWell(
-                    onTap: () {},
-                    child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      margin: const EdgeInsets.all(8.0),
-                      decoration: BoxDecoration(
-                          color: AppStyle.accentColor,
-                          borderRadius: BorderRadius.circular(8.0)),
-                      child: Text(data['note_title'],
-                          style: const TextStyle(
-                            color: Colors.white,
-                          )),
-                    ),
-
-                    // title: Text(
-                    //   data['note_title'],
-                    //   style: const TextStyle(
-                    //       color: Colors.white,
-                    //       fontWeight: FontWeight.bold,
-                    //       fontSize: 17),
-                    // ),
-                  );
-                }).toList());
-
-            // return ListView(
-            //     children: snapshot.data!.docs.map((DocumentSnapshot document) {
-            //   Map<String, dynamic> data =
-            //       document.data()! as Map<String, dynamic>;
-            //   return ListTile(
-            //     title: Text(
-            //       data['note_title'],
-            //       style: const TextStyle(
-            //           color: Colors.white,
-            //           fontWeight: FontWeight.bold,
-            //           fontSize: 17),
-            //     ), // 👈 Your valid data here
-            //   );
-            // }).toList());
+                children: snapshot.data!.docs
+                    .map((document) => noteCard(() {}, document))
+                    .toList());
           }
           return const Text(
             'No Data',
