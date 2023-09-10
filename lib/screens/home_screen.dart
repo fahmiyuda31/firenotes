@@ -40,14 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           }
           if (snapshot.hasData) {
-            // return GridView(
-            //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //       crossAxisCount: 2),
-            //   children: snapshot.data!.docs
-            //       .map((note) => noteCard(doc: note))
-            //       .toList(),
-            // );
-
             return GridView(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
