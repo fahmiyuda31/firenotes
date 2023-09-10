@@ -20,9 +20,26 @@ class _NoteReadrScreenState extends State<NoteReadrScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Text(
-          widget.document['note_title'],
-          style: AppStyle.mainTitle,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              widget.document['note_title'],
+              style: AppStyle.mainTitle,
+            ),
+            Text(
+              widget.document['creation_date'],
+              style: AppStyle.dateTitle,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              widget.document['note_content'],
+              style: AppStyle.mainContent,
+            )
+          ],
         ),
       ),
       // body: const Padding(
