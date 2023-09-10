@@ -18,6 +18,19 @@ class _NoteReadrScreenState extends State<NoteReadrScreen> {
         backgroundColor: AppStyle.cardsColors[widget.document['color_id']],
         elevation: 0.0,
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Text(
+          widget.document['note_title'],
+          style: AppStyle.mainTitle,
+        ),
+      ),
+      // body: const Padding(
+      //   padding: EdgeInsets.all(16.0),
+      //   // child: Column(
+      //   //   children: [Text(widget!.document!['note_title'])],
+      //   // ),
+      // ),
     );
   }
 }

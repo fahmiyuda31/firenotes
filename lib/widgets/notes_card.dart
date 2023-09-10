@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 Widget noteCard(Function()? OnTap, QueryDocumentSnapshot document) {
   return GestureDetector(
-    onTap: () {},
+    onTap: OnTap,
     child: Container(
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.all(8.0),
