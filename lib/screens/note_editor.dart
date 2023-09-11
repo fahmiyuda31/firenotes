@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:firenote/style/app_style.dart';
 import 'package:flutter/material.dart';
@@ -70,27 +71,23 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
             "note_content": _mainTitle.text,
             "color_id": colorId
           }).then((value) {
-            print(value.id);
-            // Fluttertoast.showToast(
-            //     msg: "Success add new note",
-            //     toastLength: Toast.LENGTH_SHORT,
-            //     gravity: ToastGravity.BOTTOM,
-            //     timeInSecForIosWeb: 1,
-            //     backgroundColor: Colors.green,
-            //     textColor: Colors.white,
-            //     fontSize: 16.0);
-
+            Fluttertoast.showToast(
+                msg: "Success add note",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIosWeb: 1,
+                textColor: Colors.green,
+                fontSize: 16.0);
             Navigator.pop(context);
           }).catchError((error) {
-            print('FAiled to add user: $error');
-            // Fluttertoast.showToast(
-            //     msg: "Failed add new note",
-            //     toastLength: Toast.LENGTH_SHORT,
-            //     gravity: ToastGravity.BOTTOM,
-            //     timeInSecForIosWeb: 1,
-            //     backgroundColor: Colors.red,
-            //     textColor: Colors.white,
-            //     fontSize: 16.0);
+            Fluttertoast.showToast(
+                msg: "Failed add new note",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0);
           });
         },
         child: const Icon(Icons.save),
