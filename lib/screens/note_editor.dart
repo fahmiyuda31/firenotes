@@ -76,7 +76,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.CENTER,
                 timeInSecForIosWeb: 1,
-                textColor: Colors.green,
+                backgroundColor: Colors.green,
+                textColor: Colors.white,
                 fontSize: 16.0);
             Navigator.pop(context);
           }).catchError((error) {
