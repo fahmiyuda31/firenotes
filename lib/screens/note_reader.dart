@@ -14,7 +14,7 @@ class _NoteReadrScreenState extends State<NoteReadrScreen> {
   @override
   Widget build(BuildContext context) {
     int colorId = widget.document['color_id'];
-    String noteId = widget.document['id'];
+    // String noteId = widget.document['documentID'];
 
     return Scaffold(
       backgroundColor: AppStyle.cardsColors[colorId],
@@ -28,7 +28,7 @@ class _NoteReadrScreenState extends State<NoteReadrScreen> {
               fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         actions: [
-          ConfirmDelete(noteID: noteId),
+          ConfirmDelete(),
         ],
       ),
       body: Padding(
@@ -56,8 +56,7 @@ class _NoteReadrScreenState extends State<NoteReadrScreen> {
 }
 
 class ConfirmDelete extends StatelessWidget {
-  const ConfirmDelete({Key? key, required this.noteID}) : super(key: key);
-  final String noteID;
+  const ConfirmDelete({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,10 +75,6 @@ class ConfirmDelete extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () => {
-                // FirebaseFirestore.instance
-                //     .collection('Notes')
-                //     .doc(noteID)
-                //     .delete(),
                 Navigator.pop(context, 'OK')
                 //             FirebaseFirestore.instance.collection("chats").document("ROOM_1")
                 // .collection("messages").document(snapshot.data.documents[index]["id"])
